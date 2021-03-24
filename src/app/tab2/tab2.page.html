@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      About Us
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br><br>
+<div>
+  <h2>WELCOME</h2>
+  <p>Hello, my name is Gaby. This is a page about us.
+     You can play minigames here called permainan tebak angka</p>
+  ============================================================
+</div>
+<br><br>
+  <div>
+    <h1>PERMAINAN TEBAK ANGKA</h1>
+    <br><br>
+    {{des}}
+    <br><br>
+    <ion-button (click)="mulaigame()">Start Game</ion-button>
+    <br><br>
+    {{play}}
+    <p>YOUR ANSWER : </p>
+    <input type="number" [(ngModel)]="jawab"/>
+    <ion-button (click)="check(jawab)">Check</ion-button>
+    <br><br>
+    <ion-button (click)="hint()">Hint</ion-button>
+    <br>
+    {{hints}}
+    <h1>{{won}}</h1>
+    <br><br>
+    <div *ngIf="menang == true; then oke else blm"></div>
+    <ng-template #oke><img src="assets/profile.jpg"></ng-template>
+    <ng-template #blm></ng-template>
+    <br><br>
+    
+  </div>
+
+</ion-content>
